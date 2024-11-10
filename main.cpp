@@ -21,8 +21,8 @@ void find_plan_based_on_duration(const string& current_location, float travel_du
 
 // Initialize locations
 void initLocations() {
-    string locations[5] = {
-        "Dehradun", "Mussoorie", "Dhanaulti", "Rishikesh", "Haridwar"
+    string locations[4] = {
+        "Dehradun", "Mussoorie", "Dhanaulti", "Rishikesh", 
     };
     for (const auto& location : locations) {
         m[location] = 1;  // Initialize map with locations
@@ -35,16 +35,21 @@ void initLocations() {
 
 // Load edges from the file into the graph
 void loadEdges() {
-    fstream f3("places.txt", ios::in | ios::binary);
+    fstream f3("places.txt", ios::in);  // Open in text mode
     if (!f3) {
         cout << "Error opening places.txt. Please check the file path.\n";
         return;
     }
 
-    Edge tempEdge;
-    while (f3.read((char*)&tempEdge, sizeof(tempEdge))) {
-        graph.addEdge(tempEdge.dest_1, tempEdge.dest_2, tempEdge.cost, tempEdge.time, tempEdge.rating, tempEdge.connectivity);
+    string dest_1, dest_2;
+    float cost, time, rating;
+    int connectivity;
+
+    // Read the file line by line and extract edge information
+    while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
+        graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);  // Add edges to the graph
     }
+
     f3.close();
     cout << "Loaded edges into the graph successfully.\n";
 }
@@ -67,23 +72,26 @@ void find_plan_based_on_duration(const string& current_location, float travel_du
     if (m.count(current_location) == 0) {
         cout << "\nLocation '" << current_location << "' not found in the available locations!\n";
         return;
+    } else {
+        cout << "Location '" << current_location << "' found in the map.\n";
     }
 
     // Set initial custom values
     for (const auto& loc : m) {
-        customValue[loc.first] = numeric_limits<float>::max(); // Use max for float
+        customValue[loc.first] = numeric_limits<float>::max(); // Initialize with max float values
     }
 
     customValue[current_location] = 0.0; // Set the custom value for the source to 0
     parent[current_location] = current_location;
 
     // Call the custom Dijkstra function to find the best routes
-    // Ensure you pass all required parameters, replacing the following placeholders with actual values
-    float param1 = 1.0; // Replace with actual values relevant to your logic
-    float param2 = 1.0; // Replace with actual values
-    float param3 = 1.0; // Replace with actual values
-    float param4 = 1.0; // Replace with actual values
-    dijk_custom_value(current_location, parent, customValue, graph.m, param1, param2, param3, param4); // Ensure this function is defined properly
+    float dist_weight = 1.0; // To be changed 
+    float dura_weight = 1.0; // To be changed 
+    float rating_weight = 1.0; // To be changed 
+    float remaining = travel_duration; // To be changed 
+
+    dijk_custom_value(current_location, parent, customValue, graph.m, dist_weight, dura_weight, rating_weight,remaining); // Ensure this function is defined properly
+    cout << "dijk_custom_value executed.\n";
 
     // Display the itinerary based on the maximum duration
     cout << "\nPossible routes from '" << current_location << "' within " << travel_duration << " hours:\n";
@@ -97,7 +105,7 @@ void find_plan_based_on_duration(const string& current_location, float travel_du
 
     // If no routes were found within the duration
     if (!route_found) {
-        cout << "No routes available within " << travel_duration << " hours.\n";
+        cout << "No routes available within given Node Value " << travel_duration << "\n";
         return;
     }
 
@@ -119,14 +127,19 @@ int main() {
 
     // Input current location and travel duration
     string current_location;
-    float travel_duration;
+    float travel_duration;  // Changed to float for flexibility
 
     cout << "\nEnter your current location: ";
-    cin.ignore();
-    getline(cin, current_location);
+    getline(cin, current_location);  // Get user input for the current location
+    cout << "You entered location: " << current_location << endl;  // Debug output
 
-    cout << "Enter your travel duration (in hours): ";
-    cin >> travel_duration;
+    cout << "Enter Node Value: ";
+    while (!(cin >> travel_duration)) {  // Handle input errors
+        cin.clear();  // Clear the error flag
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard invalid input
+        cout << "Invalid input. Please enter a number for the travel duration: ";
+    }
+    cout << "You entered Node value: " << travel_duration << endl;  // Debug output
 
     // Call function to find a plan based on current location and duration
     find_plan_based_on_duration(current_location, travel_duration);
