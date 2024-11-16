@@ -16,9 +16,9 @@ public:
     int cost;          // distance
     float time;       // duration
     float rating;     // rating
-    float connectivity; // connectivity
+    int connectivity; // connectivity
 
-    Edge(const char a[] = "Delhi", const char b[] = "China", int c = 0, float t = 0.00, float r = 0.0, float con = 0.0) {
+    Edge(const char a[] = "Delhi", const char b[] = "China", int c = 0, float t = 0.00, float r = 0.0, int con = 0){
         dest_1 = a; // Store const char* directly
         dest_2 = b;
         cost = c;
@@ -27,7 +27,7 @@ public:
         connectivity = con;
     }
 
-    void init(const char a[], const char b[], int c, float t, float r, float con) {
+    void init(const char a[], const char b[], int c, float t, float r, int con) {
         dest_1 = a; // Store const char* directly
         dest_2 = b;
         cost = c;
@@ -40,9 +40,9 @@ public:
 class Graph {
 public:
     int v;
-    map<string, list<pair<string, tuple<int, float, float, float>>>> m; // Using tuple for multiple attributes
+    map<string, list<pair<string, tuple<int, float, float, int>>>> m; // Using tuple for multiple attributes
 
-    void addEdge(string x, string y, int dist, float dura, float rate, float con) {
+    void addEdge(string x, string y, int dist, float dura, float rate, int con) {
         m[x].push_back(make_pair(y, make_tuple(dist, dura, rate, con)));
         cout << "Edge added: " << x << " -> " << y << endl;
     }
@@ -52,7 +52,7 @@ public:
 void dijk_custom_value(string src, 
                         map<string, string> &parent, 
                         map<string, float> &customValue, 
-                        map<string, list<pair<string, tuple<int, float, float, float>>>> &m, 
+                        map<string, list<pair<string, tuple<int, float, float, int>>>> &m, 
                         float dist_bias, 
                         float dura_bias, 
                         float rate_bias,  
@@ -84,7 +84,7 @@ void dijk_custom_value(string src,
             int distance = get<0>(child_data);
             float duration = get<1>(child_data);
             float rating = get<2>(child_data);
-            float connectivity = get<3>(child_data);
+            int connectivity = get<3>(child_data);
 
             float value = (distance * dist_bias) + 
                           (duration * dura_bias) + 

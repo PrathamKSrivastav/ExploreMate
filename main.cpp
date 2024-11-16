@@ -59,24 +59,52 @@ void initLocations() {
 //     cout << "Loaded edges into the graph successfully.\n";
 // }
 
-void loadEdges() {
-    fstream f3("places.txt", ios::in);
+// void loadEdges() {
+//     fstream f3("places.txt", ios::in);
 
-    
+
+
+//     string dest_1, dest_2;
+//     float cost, time, rating;
+//     int connectivity;
+
+//     while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
+//         cout << "Read: " << dest_1 << " " << dest_2 << " " << cost << " " << time << " " << rating << " " << connectivity << endl;
+//         graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);
+//         cout << "Edge added successfully: " << dest_1 << " -> " << dest_2 << endl;
+//     }
+
+//     f3.close();
+//     cout << "Loaded edges into the graph successfully.\n";
+// }
+
+
+void loadEdges() {
+    fstream f3("places.txt", ios::in | ios::binary);
+    if (!f3) {
+        cerr << "Error: Unable to open places.txt\n";
+        return;
+    }
 
     string dest_1, dest_2;
     float cost, time, rating;
     int connectivity;
 
     while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
-        cout << "Read: " << dest_1 << " " << dest_2 << " " << cost << " " << time << " " << rating << " " << connectivity << endl;
+        if (dest_1.empty() || dest_2.empty()) {
+            cerr << "Error: Invalid data in file. Skipping line.\n";
+            continue;
+        }
+
+        cout << "Debug: Read line - " << dest_1 << " " << dest_2 << " " << cost << " " << time << " " << rating << " " << connectivity << endl;
         graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);
-        cout << "Edge added successfully: " << dest_1 << " -> " << dest_2 << endl;
+        cout << "Debug: Added edge " << dest_1 << " -> " << dest_2 << endl;
     }
 
     f3.close();
     cout << "Loaded edges into the graph successfully.\n";
 }
+
 
 
 
@@ -189,7 +217,7 @@ int main() {
     cout << "You entered total days: " << total_days << endl;
 
     // Call function to find a plan based on current location and days
-    //find_plan_based_on_days(current_location, total_days);
+    find_plan_based_on_days(current_location, total_days);
 
     return 0;
 }
