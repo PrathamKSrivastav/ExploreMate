@@ -44,6 +44,7 @@ public:
 
     void addEdge(string x, string y, int dist, float dura, float rate, float con) {
         m[x].push_back(make_pair(y, make_tuple(dist, dura, rate, con)));
+        cout << "Edge added: " << x << " -> " << y << endl;
     }
 };
 
@@ -57,31 +58,26 @@ void dijk_custom_value(string src,
                         float rate_bias,  
                         float remaining_duration) {
 
-    // Initialize custom values to a large number initially
     for (auto p : m) {
-        customValue[p.first] = numeric_limits<float>::max(); // Use max for float
+        customValue[p.first] = numeric_limits<float>::max();
     }
 
-    customValue[src] = 0.0; // Set the custom value for the source to 0
-    set<pair<float, string>> s; // To maintain and find the next vertex at min custom value
+    customValue[src] = 0.0;
+    set<pair<float, string>> s;
     s.insert(make_pair(0.0, src));
     parent[src] = src;
 
     while (!s.empty()) {
         auto p = *(s.begin());
-        string current_node = p.second; 
-        float current_value = p.first; 
-
-        // Finalize this node
+        string current_node = p.second;
+        float current_value = p.first;
         s.erase(s.begin());
 
-        // Check if remaining duration is exhausted
         if (remaining_duration <= 0) {
-            cout << "No more valid nodes to visit within the remaining duration." << endl;
-            break; // Exit if there's no time left
+            cout << "No more valid nodes within remaining duration." << endl;
+            break;
         }
 
-        // Iterate through the children of the current node
         for (auto child_pair : m[current_node]) {
             string next_node = child_pair.first;
             auto child_data = child_pair.second;
@@ -90,17 +86,14 @@ void dijk_custom_value(string src,
             float rating = get<2>(child_data);
             float connectivity = get<3>(child_data);
 
-            // Calculate the value using the provided formula
             float value = (distance * dist_bias) + 
                           (duration * dura_bias) + 
                           (rating * rate_bias) + 
                           (connectivity);
 
-            // Check if we can continue to the next node within the remaining duration
             if (duration <= remaining_duration) {
-                float new_value =  value;
+                float new_value = customValue[current_node] + value;
 
-                // Check if the new custom value is lower than the current value
                 if (new_value < customValue[next_node]) {
                     auto f = s.find(make_pair(customValue[next_node], next_node));
                     if (f != s.end()) {
@@ -111,20 +104,17 @@ void dijk_custom_value(string src,
                     customValue[next_node] = new_value;
                     s.insert(make_pair(customValue[next_node], next_node));
 
-                    // Deduct the duration for this path
-                    remaining_duration -= duration; // Update remaining duration
+                    remaining_duration -= duration;
                 }
             }
         }
     }
 
-    cout << "Possible routes from '" << src << "' within given duration:" << endl;
-    // Use traditional loop to iterate over customValue
+    cout << "Routes from '" << src << "' within duration:\n";
     for (auto it = customValue.begin(); it != customValue.end(); ++it) {
-        string node = it->first;
-        float value = it->second;
-        if (value < numeric_limits<float>::max()) {
-            cout << " - " << src << " -> " << node << " (Estimated Custom Value: " << value <<")"<< endl;
+        if (it->second < numeric_limits<float>::max()) {
+            cout << " - " << src << " -> " << it->first << " (Value: " << it->second << ")\n";
         }
     }
 }
+
