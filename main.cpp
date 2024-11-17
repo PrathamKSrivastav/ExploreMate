@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <vector>
 #include "graph.h"
+#include "edges.h"
 
 using namespace std;
 
@@ -109,6 +110,7 @@ void suggestPath(const string& currentLocation, float totalDays) {
 
 int main() {
     // Initialize the graph with edges
+    // initializeEdges(graph);
     graph.addEdge("Dehradun", "Mussoorie", 50, 1.5, 4.7, 1);
     graph.addEdge("Dehradun", "Rishikesh", 70, 2.0, 4.5, 1);
     graph.addEdge("Mussoorie", "Dhanaulti", 40, 1.0, 4.9, 1);
