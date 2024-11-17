@@ -6,218 +6,133 @@
 #include <string>
 #include <limits>
 #include <unordered_set>
+#include <algorithm>
+#include <vector>
 #include "graph.h"
 
 using namespace std;
 
 // Global variables
-map<string, int> m;               // For locations
 Graph graph;                      // Storing travel data
-map<string, float> customValue;   // To store custom values based on the user's criteria
 map<string, string> parent;       // To track the travel path (parent nodes)
 
-// Forward declarations
-void initLocations();
-void loadEdges();
-void print_path(const string& dest);
-void find_plan_based_on_days(const string& current_location, float total_days);
+// Function to plan the travel path based on total days
+void suggestPath(const string& currentLocation, float totalDays) {
+    cout << "\nPlanning itinerary for " << currentLocation << " with total days: " << totalDays << " days.\n";
 
-// Initialize locations
-void initLocations() {
-    string locations[4] = {
-        "Dehradun", "Mussoorie", "Dhanaulti", "Rishikesh"
-    };
-    for (const auto& location : locations) {
-        m[location] = 1;  // Initialize map with locations
-    }
-    cout << "Initiated locations map with custom locations:\n";
-    for (const auto& loc : locations) {
-        cout << "- " << loc << endl;  // Display initialized locations
-    }
-}
+    unordered_set<string> visited; // Track visited locations
+    visited.insert(currentLocation);
 
-// Load edges from the file into the graph
-// void loadEdges() {
-//     fstream f3("places.txt", ios::in);  // Open in text mode
-//     if (!f3) {
-//         cout << "Error opening places.txt. Please check the file path.\n";
-//         return;
-//     }
+    vector<string> path; // To store the sequence of travel locations
+    path.push_back(currentLocation);
 
-//     string dest_1, dest_2;
-//     float cost, time, rating;
-//     int connectivity;
+    map<string, float> travelDurations; // Map to store duration for each node
+    float remainingDays = totalDays; // Remaining days for the trip
 
-//     // Read the file line by line and extract edge information
-//     cout<< "entering the edge loading loop ... "<<"\n";
-//     while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
-//         graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);  // Add edges to the graph
-//         cout<<"edge added successfully"<<"\n";
-//     }
-
-//     f3.close();
-//     cout << "Loaded edges into the graph successfully.\n";
-// }
-
-// void loadEdges() {
-//     fstream f3("places.txt", ios::in);
-
-
-
-//     string dest_1, dest_2;
-//     float cost, time, rating;
-//     int connectivity;
-
-//     while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
-//         cout << "Read: " << dest_1 << " " << dest_2 << " " << cost << " " << time << " " << rating << " " << connectivity << endl;
-//         graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);
-//         cout << "Edge added successfully: " << dest_1 << " -> " << dest_2 << endl;
-//     }
-
-//     f3.close();
-//     cout << "Loaded edges into the graph successfully.\n";
-// }
-
-
-void loadEdges() {
-    fstream f3("places.txt", ios::in | ios::binary);
-    if (!f3) {
-        cerr << "Error: Unable to open places.txt\n";
-        return;
-    }
-
-    string dest_1, dest_2;
-    float cost, time, rating;
-    int connectivity;
-
-    while (f3 >> dest_1 >> dest_2 >> cost >> time >> rating >> connectivity) {
-        if (dest_1.empty() || dest_2.empty()) {
-            cerr << "Error: Invalid data in file. Skipping line.\n";
-            continue;
+    // Subtract the duration of the starting node if explicitly provided
+    float startingNodeDuration = 0.0;
+    if (graph.m.count(currentLocation) > 0) {
+        for (const auto& neighbor : graph.m[currentLocation]) {
+            auto [distance, duration, rating, connectivity] = neighbor.second;
+            startingNodeDuration = duration; // Assume the node's own "duration" is found here
+            break;
         }
-
-        cout << "Debug: Read line - " << dest_1 << " " << dest_2 << " " << cost << " " << time << " " << rating << " " << connectivity << endl;
-        graph.addEdge(dest_1, dest_2, cost, time, rating, connectivity);
-        cout << "Debug: Added edge " << dest_1 << " -> " << dest_2 << endl;
     }
 
-    f3.close();
-    cout << "Loaded edges into the graph successfully.\n";
-}
+    // Deduct starting node's duration
+    remainingDays -= startingNodeDuration;
+    cout << "Starting at " << currentLocation 
+         << " subtracting its duration: " << startingNodeDuration 
+         << " days. Remaining days: " << remainingDays << "\n";
 
+    string currentNode = currentLocation;
 
+    while (remainingDays > 0) {
+        cout << "\nCurrent location: " << currentNode << ", Remaining days: " << remainingDays << "\n";
 
+        float maxValue = -1.0;
+        string nextLocation;
+        float travelDuration = 0.0;
 
-// Print the path from the source to destination
-void print_path(const string& dest) {
-    if (parent[dest] == dest) {
-        cout << dest;
-        return;
-    }
-    print_path(parent[dest]);
-    cout << " --> " << dest;
-}
+        // Check all neighbors of the current node
+        for (const auto& neighbor : graph.m[currentNode]) {
+            string neighborNode = neighbor.first;
+            auto [distance, duration, rating, connectivity] = neighbor.second;
 
-// Function to find a travel plan based on current location and trip duration
-void find_plan_based_on_days(const string& current_location, float total_days) {
-    cout << "\nPlanning itinerary for " << current_location << " with total days: " << total_days << " days.\n";
+            // Skip visited nodes
+            if (visited.count(neighborNode) > 0) continue;
 
-    // Check if the current location exists in the map
-    if (m.count(current_location) == 0) {
-        cout << "\nLocation '" << current_location << "' not found!\n";
-        return;
-    }
-
-    unordered_set<string> visited; // Keep track of visited locations
-    visited.insert(current_location);
-    
-    float remaining_days = total_days; // Track remaining days
-    string current_node = current_location;
-    parent[current_node] = current_node; // Initialize parent of starting location to itself
-
-    // Loop until remaining days are exhausted or no next location is available
-    while (remaining_days > 0) {
-        cout << "\nCurrent location: " << current_node << ", Remaining days: " << remaining_days << "\n";
-        
-        float max_value = -1.0;
-        string next_location;
-        float travel_time = 0.0;
-
-        // Iterate over adjacent nodes
-        for (auto& neighbor : graph.m[current_node]) {
-            string neighbor_node = neighbor.first;
-            auto& [distance, duration, rating, connectivity] = neighbor.second;
-
-            cout << "current_node distance-> " << distance
-                << "current_node duration-> " << duration
-                << "current_node rating-> " << rating
-                << "current_node connectivity-> " << connectivity << "\n";
-
-            // Skip visited nodes 
-            if (visited.count(neighbor_node) > 0) continue;
-
-            // Calculate value based on distance, duration, rating, and connectivity
-            float node_value = distance * 1.0 + duration * 1.0 + rating * 1.0 + connectivity;
-            cout << "current Node value -> " << node_value<<"\n";
-
-            // Debugging output
-            cout << "Considering neighbor: " << neighbor_node 
+            // Calculate value for the neighbor
+            float nodeValue = graph.calculateValue(distance, duration, rating, connectivity);
+            cout << "Considering neighbor: " << neighborNode 
                  << " with travel duration: " << duration 
-                 << " and node value: " << node_value << "\n";
+                 << " and calculated value: " << nodeValue << "\n";
 
-            // Find the highest-value unvisited node within remaining days
-            if (node_value > max_value && duration <= remaining_days) {
-                max_value = node_value;
-                next_location = neighbor_node;
-                travel_time = duration;
+            // Select the highest-value unvisited node within the remaining days
+            if (nodeValue > maxValue && duration <= remainingDays) {
+                maxValue = nodeValue;
+                nextLocation = neighborNode;
+                travelDuration = duration;
             }
         }
 
-        // Check if a valid next location was found
-        // if (next_location.empty()) {
-        //     cout << "No further destinations within the remaining days.\n";
-        //     break;
-        // }
+        // If no valid next location is found, stop
+        if (nextLocation.empty()) {
+            cout << "No further destinations within the remaining days.\n";
+            break;
+        }
 
-        // Visit the next location
-        cout << "Travelling to: " << next_location << " (Value: " << max_value << ", Duration: " << travel_time << " days)\n";
-        visited.insert(next_location);
-        remaining_days -= travel_time;
-        parent[next_location] = current_node; // Set parent of next location to current node
-        current_node = next_location;
+        // Move to the next location
+        cout << "Traveling to: " << nextLocation 
+             << " (Value: " << maxValue 
+             << ", Duration: " << travelDuration << " days)\n";
+        visited.insert(nextLocation);
+        path.push_back(nextLocation);
+
+        // Store the travel duration for the current edge
+        travelDurations[nextLocation] = travelDuration;
+
+        remainingDays -= travelDuration;
+        currentNode = nextLocation;
     }
 
-    cout << "\nItinerary planning completed. Travel path:\n";
-    for (const auto& location : visited) {
-        cout << "Path to " << location << ": ";
-        print_path(location);
-        cout << endl;
+    // Output the planned path
+    cout << "\nItinerary planning completed. Travel path to take:\n";
+    for (size_t i = 0; i < path.size(); ++i) {
+        cout << path[i];
+        if (i < path.size() - 1) {
+            cout << " --> ";
+        }
     }
+    cout << "\n";
 }
 
 int main() {
-    // Initialize the available locations
-    initLocations();
-    loadEdges(); // Load edges from the file into the graph
+    // Initialize the graph with edges
+    graph.addEdge("Dehradun", "Mussoorie", 50, 1.5, 4.7, 1);
+    graph.addEdge("Dehradun", "Rishikesh", 70, 2.0, 4.5, 1);
+    graph.addEdge("Mussoorie", "Dhanaulti", 40, 1.0, 4.9, 1);
+    graph.addEdge("Mussoorie", "Rishikesh", 80, 2.5, 4.3, 1);
+    graph.addEdge("Dhanaulti", "Dehradun", 60, 2.0, 4.4, 3);
 
-    // Input current location and total days for the trip
-    string current_location;
-    float total_days;
+    // Input current location and trip duration
+    string currentLocation;
+    float totalDays;
 
     cout << "\nEnter your current location: ";
-    getline(cin, current_location);
-    cout << "You entered location: " << current_location << endl;
+    getline(cin, currentLocation);
+    cout << "You entered location: " << currentLocation << endl;
 
     cout << "Enter the number of days for your trip: ";
-    while (!(cin >> total_days) || total_days <= 0) {
+    while (!(cin >> totalDays) || totalDays <= 0) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input. Please enter a positive number for the days: ";
     }
-    cout << "You entered total days: " << total_days << endl;
+    cout << "You entered total days: " << totalDays << endl;
 
-    // Call function to find a plan based on current location and days
-    find_plan_based_on_days(current_location, total_days);
+    // Plan and suggest the path
+    suggestPath(currentLocation, totalDays);
 
     return 0;
 }
