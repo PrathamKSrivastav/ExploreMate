@@ -9,7 +9,6 @@
 #include <algorithm>
 #include <vector>
 #include "graph.h"
-#include "edges.h"
 
 using namespace std;
 
@@ -108,15 +107,122 @@ void suggestPath(const string& currentLocation, float totalDays) {
     cout << "\n";
 }
 
+void suggestCircuitPath(const string& startLocation, float totalDays) {
+    cout << "\nPlanning itinerary for " << startLocation << " with total days: " << totalDays << " days.\n";
+
+    unordered_set<string> visited; // Track visited locations
+    visited.insert(startLocation);
+
+    vector<string> path; // To store the sequence of travel locations
+    path.push_back(startLocation);
+
+    float remainingDays = totalDays; // Remaining days for the trip
+    float totalDistance = 0.0;       // Total distance traveled
+    string currentNode = startLocation;
+
+    // Deduct the starting node's duration
+    float startingNodeDuration = 0.0;
+    if (graph.m.count(startLocation) > 0) {
+        for (const auto& neighbor : graph.m[startLocation]) {
+            auto [distance, duration, rating, connectivity] = neighbor.second;
+            startingNodeDuration = duration; // Assume the node's "duration" is found here
+            break;
+        }
+    }
+
+    remainingDays -= startingNodeDuration;
+    cout << "Starting at " << startLocation 
+         << " subtracting its duration: " << startingNodeDuration 
+         << " days. Remaining days: " << remainingDays << "\n";
+
+    while (remainingDays > 0) {
+        cout << "\nCurrent location: " << currentNode << ", Remaining days: " << remainingDays << "\n";
+
+        float maxValue = -1.0;
+        string nextLocation;
+        float travelDuration = 0.0;
+        float travelDistance = 0.0;
+
+        // Check all neighbors of the current node
+        for (const auto& neighbor : graph.m[currentNode]) {
+            string neighborNode = neighbor.first;
+            auto [distance, duration, rating, connectivity] = neighbor.second;
+
+            // Skip visited nodes
+            if (visited.count(neighborNode) > 0) continue;
+
+            // Calculate value for the neighbor
+            float nodeValue = graph.calculateValue(distance, duration, rating, connectivity);
+            cout << "Considering neighbor: " << neighborNode 
+                 << " with travel duration: " << duration 
+                 << " and calculated value: " << nodeValue << "\n";
+
+            // Select the highest-value unvisited node within the remaining days
+            if (nodeValue > maxValue && duration <= remainingDays) {
+                maxValue = nodeValue;
+                nextLocation = neighborNode;
+                travelDuration = duration;
+                travelDistance = distance;
+            }
+        }
+
+        // If no valid next location is found, stop
+        if (nextLocation.empty()) {
+            cout << "No further destinations within the remaining days.\n";
+            break;
+        }
+
+        // Move to the next location
+        cout << "Traveling to: " << nextLocation 
+             << " (Value: " << maxValue 
+             << ", Duration: " << travelDuration 
+             << " days, Distance: " << travelDistance << " km)\n";
+        visited.insert(nextLocation);
+        path.push_back(nextLocation);
+        totalDistance += travelDistance;
+
+        remainingDays -= travelDuration;
+        currentNode = nextLocation;
+    }
+
+    // Add the distance to return to the start location
+    if (graph.m.count(currentNode) > 0) {
+        bool foundReturnPath = false;
+        for (const auto& neighbor : graph.m[currentNode]) {
+            if (neighbor.first == startLocation) {
+                auto [distance, duration, rating, connectivity] = neighbor.second;
+                totalDistance += distance; // Add the return distance to the starting node
+                cout << "Returning to starting location " << startLocation 
+                     << " via path distance: " << distance << " km.\n";
+                foundReturnPath = true;
+                break;
+            }
+        }
+        if (!foundReturnPath) {
+            cout << "No direct path back to the starting location: " << startLocation << "\n";
+        }
+    }
+
+    // Output the planned path
+    cout << "\nItinerary planning completed. Travel circuit:\n";
+    for (size_t i = 0; i < path.size(); ++i) {
+        cout << path[i];
+        if (i < path.size() - 1) {
+            cout << " --> ";
+        }
+    }
+    cout << " --> " << startLocation << "\n";
+
+    cout << "Total distance traveled: " << totalDistance << " km.\n";
+}
+
+
+
 int main() {
     // Initialize the graph with edges
     // initializeEdges(graph);
-    graph.addEdge("Dehradun", "Mussoorie", 50, 1.5, 4.7, 1);
-    graph.addEdge("Dehradun", "Rishikesh", 70, 2.0, 4.5, 1);
-    graph.addEdge("Mussoorie", "Dhanaulti", 40, 1.0, 4.9, 1);
-    graph.addEdge("Mussoorie", "Rishikesh", 80, 2.5, 4.3, 1);
-    graph.addEdge("Dhanaulti", "Dehradun", 60, 2.0, 4.4, 3);
-
+    
+    graph.initializeEdges();
     // Input current location and trip duration
     string currentLocation;
     float totalDays;
@@ -135,6 +241,7 @@ int main() {
 
     // Plan and suggest the path
     suggestPath(currentLocation, totalDays);
-
+    cout << "#######################################################################"<< endl;
+    suggestCircuitPath(currentLocation, totalDays);
     return 0;
 }
