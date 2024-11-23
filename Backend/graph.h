@@ -15,14 +15,14 @@ public:
 
     unordered_map<string, list<pair<string, tuple<int, float, float, int>>>> m; // Using tuple for multiple attributes
 
-    void addEdge(const char src[], const char dest[], int distance, int duration, float rating, int connectivity) {
+    void addEdge(const char src[], const char dest[], float distance, int duration, float rating, int connectivity) {
         string source(src);
         string destination(dest);
         m[source].push_back({destination, {distance, duration, rating, connectivity}});
         m[destination].push_back({source, {distance, duration, rating, connectivity}});
     }
 
-    void updateEdge(const char src[], const char dest[], int newDistance, int newDuration, float newRating, int newConnectivity) {
+    void updateEdge(const char src[], const char dest[], float newDistance, int newDuration, float newRating, int newConnectivity) {
         string source(src);
         string destination(dest);
 
@@ -83,5 +83,38 @@ public:
         addEdge("Mussoorie", "Dhanaulti", 40, 1.0, 4.9, 1);
         addEdge("Mussoorie", "Rishikesh", 80, 2.5, 4.3, 1);
         addEdge("Dhanaulti", "Dehradun", 60, 2.0, 4.4, 3);
+
+       addEdge("Mussoorie", "Landour", 10, 0.5, 4.8, 1);
+       addEdge("Mussoorie", "Sahastradhara", 35, 1.2, 4.6, 1);
+       addEdge("Sahastradhara", "Dhanaulti", 50, 1.8, 4.7, 1);
+       addEdge("Dhanaulti", "Kantal", 30, 1.0, 4.5, 2);
+       addEdge("Kantal", "Chamba", 40, 1.5, 4.6, 2);
+
+       addEdge("Mussoorie", "Nag Tibba", 55, 2.0, 4.8, 1);
+       addEdge("Nag Tibba", "Chakrata", 60, 2.5, 4.7, 2);
+
+       addEdge("Dehradun", "Sahastradhara", 40, 1.5, 4.6, 1);
+       addEdge("Sahastradhara", "Mussoorie", 35, 1.2, 4.6, 1);
+
+       addEdge("Rishikesh", "Shivpuri", 25, 1.0, 4.4, 1);
+       addEdge("Rishikesh", "Haridwar", 25, 1.0, 4.5, 1);
+       addEdge("Haridwar", "Roorkee", 30, 1.2, 4.3, 2);
+
+       addEdge("Dehradun", "Haridwar", 45, 1.6, 4.5, 1);
+       addEdge("Haridwar", "Shivpuri", 30, 1.0, 4.2, 2);
+       addEdge("Haridwar", "Sahastradhara", 60, 2.0, 4.4, 2);
+       addEdge("Rishikesh", "Dhanaulti", 75, 3.0, 4.6, 1);
+       addEdge("Rishikesh", "Chakrata", 90, 3.5, 4.5, 2);
+       addEdge("Dhanaulti", "Sahastradhara", 70, 2.5, 4.5, 1);
+       addEdge("Sahastradhara", "Kantal", 50, 1.8, 4.7, 2);
+       addEdge("Sahastradhara", "Landour", 80, 2.8, 4.6, 2);
+       addEdge("Mussoorie", "Chakrata", 65, 2.4, 4.8, 1);
+       addEdge("Chakrata", "Nag Tibba", 70, 3.0, 4.9, 2);
+       addEdge("Nag Tibba", "Kantal", 45, 1.8, 4.7, 3);
+       addEdge("Landour", "Chamba", 75, 2.5, 4.6, 2);
+       addEdge("Landour", "Dehradun", 35, 1.3, 4.7, 1);
+       addEdge("Chamba", "Roorkee", 90, 3.5, 4.4, 2);
+       addEdge("Chamba", "Haridwar", 100, 4.0, 4.3, 3);
+       addEdge("Rishikesh", "Roorkee", 60, 2.0, 4.4, 1);
     }
 };
