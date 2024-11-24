@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>BG.png</file>
+        <file>calender.png</file>
+        <file>location.png</file>
+    </qresource>
+</RCC>
