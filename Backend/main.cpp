@@ -220,8 +220,6 @@ void suggestCircuitPath(const string& startLocation, float totalDays) {
 
 int main() {
     // Initialize the graph with edges
-    // initializeEdges(graph);
-    
     graph.initializeEdges();
     // Input current location and trip duration
     string currentLocation;
