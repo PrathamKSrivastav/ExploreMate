@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>resultwindow</class>
+ <widget class="QWidget" name="resultwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>761</width>
+    <height>536</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;
+
+
+</string>
+  </property>
+  <widget class="QLabel" name="AppName">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>0</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin: 20px 0;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>ExploreMate</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Background">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>741</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: lightgray; /* Light gray background */
+    border: 2px ; /* Border color */
+    border-radius: 10px; /* Curved corners */
+    padding: 5px; /* Padding around the text */
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Heading1">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>239</width>
+     <height>47</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 20px; /* Larger font size for the heading */
+    font-weight: bold; /* Make the heading bold */
+    color: black; /* Set text color to black */
+    padding: 10px; /* Add some padding around the text */
+   border-radius: 15px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>ExploreMate's Choice</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="ExpChoice">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>160</y>
+     <width>681</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px dashed #333; /* Dashed border */
+    border-radius: 8px; /* Rounded corners */
+    height: 200px; /* Set height for the block */
+    margin: 10px; /* Space around the block */
+    padding: 10px; /* Padding inside the block */
+}
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Heading2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>239</width>
+     <height>47</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 20px; /* Larger font size for the heading */
+    font-weight: bold; /* Make the heading bold */
+    color: black; /* Set text color to black */
+    padding: 10px; /* Add some padding around the text */
+   border-radius: 15px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Other Choices</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="ExpChoice_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>290</y>
+     <width>681</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px dashed #333; /* Dashed border */
+    border-radius: 8px; /* Rounded corners */
+    height: 200px; /* Set height for the block */
+    margin: 10px; /* Space around the block */
+    padding: 10px; /* Padding inside the block */
+}
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>460</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+exploreButton-&gt;setStyleSheet(
+    &quot;background-color: black;&quot;
+    &quot;color: white;&quot;
+    &quot;font-size: 16px;&quot;
+    &quot;padding: 10px 20px;&quot;
+    &quot;border-radius: 5px;&quot;
+    &quot;border: none;&quot;
+    &quot;hover { background-color: #444; }&quot;
+);
+
+</string>
+   </property>
+   <property name="text">
+    <string>Next</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

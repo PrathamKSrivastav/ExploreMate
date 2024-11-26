@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>thankyouwindow</class>
+ <widget class="QWidget" name="thankyouwindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>761</width>
+    <height>536</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;</string>
+  </property>
+  <widget class="QLabel" name="Background">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>741</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/BG.png);
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="AppName">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>-20</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin: 20px 0;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>ExploreMate</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>190</y>
+     <width>611</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Styling for the Thank You QLabel */
+QLabel {
+    font: bold 40px Arial;  /* Adjusted font size to fit screen */
+    color: #ffffff;  /* White text color for high contrast */
+    background:transparent;
+    padding: 20px;  /* Padding around the text */
+    border-radius: 10px;  /* Rounded corners for a smoother appearance */
+    text-align: center;  /* Center-align the text */
+    margin: 20px;  /* Add space around the label */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);  /* Light shadow for depth */
+    width: 90%;  /* Set width to 90% of screen size */
+    height: auto;  /* Allow the height to adjust based on text size */
+    word-wrap: break-word;  /* Ensure long text wraps properly */
+    display: block;  /* Ensure it behaves like a block-level element */
+    margin-left: auto;
+    margin-right: auto;  /* Center the label horizontally */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Thank you for visitng!</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ExploreBtn">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>440</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+exploreButton-&gt;setStyleSheet(
+    &quot;background-color: black;&quot;
+    &quot;color: white;&quot;
+    &quot;font-size: 16px;&quot;
+    &quot;padding: 10px 20px;&quot;
+    &quot;border-radius: 5px;&quot;
+    &quot;border: none;&quot;
+    &quot;hover { background-color: #444; }&quot;
+);
+
+</string>
+   </property>
+   <property name="text">
+    <string>Explore More</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,10 @@
+release/feedbackwindow.o
+release/main.o
+release/mainwindow.o
+release/resultwindow.o
+release/thankyouwindow.o
+release/qrc_resources.o
+release/moc_feedbackwindow.o
+release/moc_mainwindow.o
+release/moc_resultwindow.o
+release/moc_thankyouwindow.o
