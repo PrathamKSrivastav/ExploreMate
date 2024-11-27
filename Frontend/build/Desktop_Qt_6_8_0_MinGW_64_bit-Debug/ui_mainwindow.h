@@ -30,8 +30,6 @@ public:
     QLineEdit *Duration;
     QPushButton *ExploreBtn;
     QLabel *AppName;
-    QLabel *durationIcon;
-    QLabel *locationIcon;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -162,41 +160,6 @@ public:
 "}\n"
 ""));
         AppName->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        durationIcon = new QLabel(centralwidget);
-        durationIcon->setObjectName("durationIcon");
-        durationIcon->setGeometry(QRect(480, 300, 61, 51));
-        durationIcon->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"    padding: 5px;\n"
-"    background: transparent;\n"
-"}\n"
-"\n"
-" QLabel#durationIcon {\n"
-"    padding: 5px; /* Adds spacing around the icon */\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit:focus + QLabel#durationIcon {\n"
-"    visibility: hidden; /* Makes the icon invisible when the QLineEdit is focused */\n"
-"}\n"
-""));
-        durationIcon->setPixmap(QPixmap(QString::fromUtf8(":/images/calender.png")));
-        durationIcon->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        locationIcon = new QLabel(centralwidget);
-        locationIcon->setObjectName("locationIcon");
-        locationIcon->setGeometry(QRect(480, 240, 61, 51));
-        locationIcon->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"    padding: 5px;\n"
-"    background: transparent;\n"
-"}\n"
-"QLabel#locationIcon {\n"
-"    padding: 5px; /* Adds spacing around the icon */\n"
-"}\n"
-"\n"
-"QLineEdit:focus + QLabel#locationIcon {\n"
-"    visibility: hidden; /* Makes the icon invisible when the QLineEdit is focused */\n"
-"}"));
-        locationIcon->setPixmap(QPixmap(QString::fromUtf8(":/images/location.png")));
-        locationIcon->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -210,12 +173,10 @@ public:
         Background->setText(QString());
         Menu->setText(QString());
         amenu->setPlaceholderText(QCoreApplication::translate("MainWindow", "   Explore like never before!", nullptr));
-        Location->setPlaceholderText(QCoreApplication::translate("MainWindow", "            Enter Current Location", nullptr));
-        Duration->setPlaceholderText(QCoreApplication::translate("MainWindow", "            Enter Duration", nullptr));
+        Location->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Current Location", nullptr));
+        Duration->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Duration", nullptr));
         ExploreBtn->setText(QCoreApplication::translate("MainWindow", "Start Exploring", nullptr));
         AppName->setText(QCoreApplication::translate("MainWindow", "ExploreMate", nullptr));
-        durationIcon->setText(QString());
-        locationIcon->setText(QString());
     } // retranslateUi
 
 };

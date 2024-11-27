@@ -3,5 +3,6 @@
         <file>BG.png</file>
         <file>calender.png</file>
         <file>location.png</file>
+        <file>down-arrow.png</file>
     </qresource>
 </RCC>
