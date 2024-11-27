@@ -60,12 +60,1377 @@ border-radius: 10px;</string>
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>351</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font: bold 14px Arial;  /* Adjust font family and size */
+    color: #333;  /* Text color */
+    padding: 10px;  /* Padding around the label */
+    background-color: #f4f4f4;  /* Background color for the label */
+    border-radius: 5px;  /* Rounded corners for the label */
+    margin-bottom: 5px;  /* Space below the label */
+}</string>
+   </property>
+   <property name="text">
+    <string>How would you rate your overall experience at the recommended location?</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>412</x>
+     <y>180</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>351</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font: bold 14px Arial;  /* Adjust font family and size */
+    color: #333;  /* Text color */
+    padding: 10px;  /* Padding around the label */
+    background-color: #f4f4f4;  /* Background color for the label */
+    border-radius: 5px;  /* Rounded corners for the label */
+    margin-bottom: 5px;  /* Space below the label */
+}</string>
+   </property>
+   <property name="text">
+    <string>How would you rate the availability of facilities such as restrooms and seating areas?</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>412</x>
+     <y>240</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>310</y>
+     <width>351</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font: bold 14px Arial;  /* Adjust font family and size */
+    color: #333;  /* Text color */
+    padding: 10px;  /* Padding around the label */
+    background-color: #f4f4f4;  /* Background color for the label */
+    border-radius: 5px;  /* Rounded corners for the label */
+    margin-bottom: 5px;  /* Space below the label */
+}</string>
+   </property>
+   <property name="text">
+    <string>How engaging did you find the attractions or activities offered?</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>370</y>
+     <width>351</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font: bold 14px Arial;  /* Adjust font family and size */
+    color: #333;  /* Text color */
+    padding: 10px;  /* Padding around the label */
+    background-color: #f4f4f4;  /* Background color for the label */
+    border-radius: 5px;  /* Rounded corners for the label */
+    margin-bottom: 5px;  /* Space below the label */
+}</string>
+   </property>
+   <property name="text">
+    <string>How easy was it to navigate and access the location?</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>412</x>
+     <y>310</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>412</x>
+     <y>370</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ExploreBtn">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>460</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+exploreButton-&gt;setStyleSheet(
+    &quot;background-color: black;&quot;
+    &quot;color: white;&quot;
+    &quot;font-size: 16px;&quot;
+    &quot;padding: 10px 20px;&quot;
+    &quot;border-radius: 5px;&quot;
+    &quot;border: none;&quot;
+    &quot;hover { background-color: #444; }&quot;
+);
+
+</string>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton1_5">
+   <property name="geometry">
+    <rect>
+     <x>661</x>
+     <y>180</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton1_3">
+   <property name="geometry">
+    <rect>
+     <x>547</x>
+     <y>180</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton1_4">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>180</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton1_1">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>180</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton1_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>180</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton2_5">
+   <property name="geometry">
+    <rect>
+     <x>661</x>
+     <y>240</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton2_3">
+   <property name="geometry">
+    <rect>
+     <x>547</x>
+     <y>240</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton2_4">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>240</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton2_1">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>240</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton2_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>240</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton3_5">
+   <property name="geometry">
+    <rect>
+     <x>661</x>
+     <y>310</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton3_3">
+   <property name="geometry">
+    <rect>
+     <x>547</x>
+     <y>310</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton3_4">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>310</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton3_1">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>310</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton3_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>310</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton4_5">
+   <property name="geometry">
+    <rect>
+     <x>661</x>
+     <y>370</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton4_3">
+   <property name="geometry">
+    <rect>
+     <x>547</x>
+     <y>370</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton4_4">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>370</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton4_1">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>370</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton4_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>370</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton {
+    font: 12px Arial;  /* Adjust font size */
+    color: #333;  /* Text color */
+    spacing: 10px;  /* Space between the radio button and the text */
+    padding: 5px;  /* Padding around the button */
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #888;  /* Border color for the radio button */
+    border-radius: 9px;  /* Makes the indicator a perfect circle */
+    background-color: white;  /* Background color for the radio button */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #4CAF50;  /* Green color when checked */
+    border: 2px solid #4CAF50;  /* Green border when checked */
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: white;  /* White background when unchecked */
+    border: 2px solid #888;  /* Light gray border when unchecked */
+}
+
+QRadioButton::indicator:hover {
+    border-color: #0078D4;  /* Blue border when hovering over the radio button */
+}
+
+QRadioButton:checked {
+    font-weight: bold;  /* Bold text when selected */
+}
+
+QRadioButton:disabled {
+    color: #D3D3D3;  /* Light gray text color when disabled */
+}
+
+QRadioButton:focus {
+    outline: none;  /* Remove the default focus outline */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>291</width>
+     <height>47</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	padding-left:10px;
+	background:transparent;
+    font-family: &quot;Arial&quot;;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Destination Visited</string>
+   </property>
+  </widget>
   <widget class="QComboBox" name="destinations">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>338</x>
      <y>110</y>
-     <width>301</width>
+     <width>291</width>
      <height>47</height>
     </rect>
    </property>
@@ -108,657 +1473,30 @@ QComboBox QAbstractItemView  {
 </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>110</y>
-     <width>609</width>
-     <height>52</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-	padding-left:10px;
-	background:transparent;
-    font-family: &quot;Arial&quot;;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    text-align: left;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Destination Visited</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>180</y>
-     <width>351</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    font: bold 14px Arial;  /* Adjust font family and size */
-    color: #333;  /* Text color */
-    padding: 10px;  /* Padding around the label */
-    background-color: #f4f4f4;  /* Background color for the label */
-    border-radius: 5px;  /* Rounded corners for the label */
-    margin-bottom: 5px;  /* Space below the label */
-}</string>
-   </property>
-   <property name="text">
-    <string>Question 1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton1_1">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>190</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-	border-radius:10px;
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton1_2">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>190</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton1_3">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>190</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton1_4">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>190</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>4</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton1_5">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>190</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>5</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>412</x>
-     <y>180</y>
-     <width>321</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius:10px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>240</y>
-     <width>351</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    font: bold 14px Arial;  /* Adjust font family and size */
-    color: #333;  /* Text color */
-    padding: 10px;  /* Padding around the label */
-    background-color: #f4f4f4;  /* Background color for the label */
-    border-radius: 5px;  /* Rounded corners for the label */
-    margin-bottom: 5px;  /* Space below the label */
-}</string>
-   </property>
-   <property name="text">
-    <string>Question 2</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton2_4">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>250</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>4</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton2_3">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>250</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton2_1">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>250</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-	border-radius:10px;
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton2_5">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>250</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>5</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>412</x>
-     <y>240</y>
-     <width>321</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius:10px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton2_2">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>250</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>310</y>
-     <width>351</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    font: bold 14px Arial;  /* Adjust font family and size */
-    color: #333;  /* Text color */
-    padding: 10px;  /* Padding around the label */
-    background-color: #f4f4f4;  /* Background color for the label */
-    border-radius: 5px;  /* Rounded corners for the label */
-    margin-bottom: 5px;  /* Space below the label */
-}</string>
-   </property>
-   <property name="text">
-    <string>Question 3</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton4_2">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>380</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton3_4">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>320</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>4</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>370</y>
-     <width>351</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    font: bold 14px Arial;  /* Adjust font family and size */
-    color: #333;  /* Text color */
-    padding: 10px;  /* Padding around the label */
-    background-color: #f4f4f4;  /* Background color for the label */
-    border-radius: 5px;  /* Rounded corners for the label */
-    margin-bottom: 5px;  /* Space below the label */
-}</string>
-   </property>
-   <property name="text">
-    <string>Question 4</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton4_4">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>380</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>4</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton4_1">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>380</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-	border-radius:10px;
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton3_3">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>320</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton3_1">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>320</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-	border-radius:10px;
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton3_5">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>320</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>5</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>412</x>
-     <y>310</y>
-     <width>321</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius:10px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>412</x>
-     <y>370</y>
-     <width>321</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius:10px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton4_5">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>380</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>5</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton4_3">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>380</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>3</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton3_2">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>320</y>
-     <width>41</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QRadioButton {
-    font: 12px Arial;  /* Adjust font size */
-    color: #333;  /* Text color */
-    spacing: 10px;  /* Space between the radio button and the text */
-
-}</string>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ExploreBtn">
+  <widget class="QLabel" name="statusBox">
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>460</y>
-     <width>251</width>
-     <height>41</height>
+     <y>440</y>
+     <width>241</width>
+     <height>20</height>
     </rect>
    </property>
-   <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
-   </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    padding: 10px;
-    font-weight: bold;
-}
-exploreButton-&gt;setStyleSheet(
-    &quot;background-color: black;&quot;
-    &quot;color: white;&quot;
-    &quot;font-size: 16px;&quot;
-    &quot;padding: 10px 20px;&quot;
-    &quot;border-radius: 5px;&quot;
-    &quot;border: none;&quot;
-    &quot;hover { background-color: #444; }&quot;
-);
-
-</string>
+    <string notr="true">background: transparent;
+color:red;
+font-size:15px;
+padding-left:10px;</string>
    </property>
    <property name="text">
-    <string>Submit</string>
+    <string/>
    </property>
   </widget>
   <zorder>Background</zorder>
+  <zorder>label_3</zorder>
   <zorder>AppName</zorder>
-  <zorder>destinations</zorder>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
   <zorder>radioButton1_1</zorder>
   <zorder>radioButton1_2</zorder>
   <zorder>radioButton1_3</zorder>
@@ -786,6 +1524,29 @@ exploreButton-&gt;setStyleSheet(
   <zorder>radioButton3_1</zorder>
   <zorder>radioButton3_5</zorder>
   <zorder>ExploreBtn</zorder>
+  <zorder>radioButton1_5</zorder>
+  <zorder>radioButton1_3</zorder>
+  <zorder>radioButton1_4</zorder>
+  <zorder>radioButton1_1</zorder>
+  <zorder>radioButton1_2</zorder>
+  <zorder>radioButton2_5</zorder>
+  <zorder>radioButton2_3</zorder>
+  <zorder>radioButton2_4</zorder>
+  <zorder>radioButton2_1</zorder>
+  <zorder>radioButton2_2</zorder>
+  <zorder>radioButton3_5</zorder>
+  <zorder>radioButton3_3</zorder>
+  <zorder>radioButton3_4</zorder>
+  <zorder>radioButton3_1</zorder>
+  <zorder>radioButton3_2</zorder>
+  <zorder>radioButton4_5</zorder>
+  <zorder>radioButton4_3</zorder>
+  <zorder>radioButton4_4</zorder>
+  <zorder>radioButton4_1</zorder>
+  <zorder>radioButton4_2</zorder>
+  <zorder>destinations</zorder>
+  <zorder>label</zorder>
+  <zorder>statusBox</zorder>
  </widget>
  <resources/>
  <connections/>

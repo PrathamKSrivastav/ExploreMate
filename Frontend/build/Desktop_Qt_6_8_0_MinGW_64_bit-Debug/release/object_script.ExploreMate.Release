@@ -1,4 +1,5 @@
 release/feedbackwindow.o
+release/graph.o
 release/main.o
 release/mainwindow.o
 release/resultwindow.o

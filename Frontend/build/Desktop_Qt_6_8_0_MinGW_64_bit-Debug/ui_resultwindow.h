@@ -24,10 +24,10 @@ public:
     QLabel *AppName;
     QLabel *Background;
     QLabel *Heading1;
-    QFrame *ExpChoice;
     QLabel *Heading2;
     QFrame *ExpChoice_2;
     QPushButton *pushButton;
+    QLabel *ExpChoice;
 
     void setupUi(QWidget *resultwindow)
     {
@@ -70,19 +70,6 @@ public:
 "   border-radius: 15px;\n"
 "}\n"
 ""));
-        ExpChoice = new QFrame(resultwindow);
-        ExpChoice->setObjectName("ExpChoice");
-        ExpChoice->setGeometry(QRect(40, 160, 681, 71));
-        ExpChoice->setStyleSheet(QString::fromUtf8("QFrame{\n"
-"    border: 2px dashed #333; /* Dashed border */\n"
-"    border-radius: 8px; /* Rounded corners */\n"
-"    height: 200px; /* Set height for the block */\n"
-"    margin: 10px; /* Space around the block */\n"
-"    padding: 10px; /* Padding inside the block */\n"
-"}\n"
-""));
-        ExpChoice->setFrameShape(QFrame::Shape::StyledPanel);
-        ExpChoice->setFrameShadow(QFrame::Shadow::Raised);
         Heading2 = new QLabel(resultwindow);
         Heading2->setObjectName("Heading2");
         Heading2->setGeometry(QRect(40, 240, 239, 47));
@@ -128,6 +115,23 @@ public:
 ");\n"
 "\n"
 ""));
+        ExpChoice = new QLabel(resultwindow);
+        ExpChoice->setObjectName("ExpChoice");
+        ExpChoice->setGeometry(QRect(40, 160, 681, 71));
+        ExpChoice->setStyleSheet(QString::fromUtf8("QFrame{\n"
+"    border: 2px dashed #333; /* Dashed border */\n"
+"    border-radius: 8px; /* Rounded corners */\n"
+"    height: 200px; /* Set height for the block */\n"
+"    margin: 5px; /* Space around the block */\n"
+"    padding: 5px; /* Padding inside the block */\n"
+"	padding-right:5px;\n"
+"	color:black;\n"
+"	font-size:13px;\n"
+"	font-weight:bold;\n"
+"}\n"
+"\n"
+""));
+        ExpChoice->setWordWrap(true);
 
         retranslateUi(resultwindow);
 
@@ -142,6 +146,7 @@ public:
         Heading1->setText(QCoreApplication::translate("resultwindow", "ExploreMate's Choice", nullptr));
         Heading2->setText(QCoreApplication::translate("resultwindow", "Other Choices", nullptr));
         pushButton->setText(QCoreApplication::translate("resultwindow", "Next", nullptr));
+        ExpChoice->setText(QString());
     } // retranslateUi
 
 };

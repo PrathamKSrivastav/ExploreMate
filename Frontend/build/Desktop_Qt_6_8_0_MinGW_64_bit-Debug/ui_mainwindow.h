@@ -30,6 +30,7 @@ public:
     QLineEdit *Duration;
     QPushButton *ExploreBtn;
     QLabel *AppName;
+    QLabel *statusLabel;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -160,6 +161,13 @@ public:
 "}\n"
 ""));
         AppName->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        statusLabel = new QLabel(centralwidget);
+        statusLabel->setObjectName("statusLabel");
+        statusLabel->setGeometry(QRect(470, 350, 241, 20));
+        statusLabel->setStyleSheet(QString::fromUtf8("background: transparent;\n"
+"color:red;\n"
+"font-size:10px;\n"
+"padding-left:10px;"));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -177,6 +185,7 @@ public:
         Duration->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Duration", nullptr));
         ExploreBtn->setText(QCoreApplication::translate("MainWindow", "Start Exploring", nullptr));
         AppName->setText(QCoreApplication::translate("MainWindow", "ExploreMate", nullptr));
+        statusLabel->setText(QString());
     } // retranslateUi
 
 };

@@ -10,16 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     feedbackwindow.cpp \
+    graph.cpp \
     main.cpp \
     mainwindow.cpp \
     resultwindow.cpp \
-    thankyouwindow.cpp
+    thankyouwindow.cpp \
 
 HEADERS += \
     feedbackwindow.h \
     mainwindow.h \
     resultwindow.h \
-    thankyouwindow.h
+    thankyouwindow.h \
+    graph.h
 
 FORMS += \
     feedbackwindow.ui \

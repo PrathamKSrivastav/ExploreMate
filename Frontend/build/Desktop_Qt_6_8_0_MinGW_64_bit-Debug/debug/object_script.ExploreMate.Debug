@@ -1,4 +1,5 @@
 debug/feedbackwindow.o
+debug/graph.o
 debug/main.o
 debug/mainwindow.o
 debug/resultwindow.o

@@ -89,32 +89,6 @@
     <string>ExploreMate's Choice</string>
    </property>
   </widget>
-  <widget class="QFrame" name="ExpChoice">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>160</y>
-     <width>681</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QFrame{
-    border: 2px dashed #333; /* Dashed border */
-    border-radius: 8px; /* Rounded corners */
-    height: 200px; /* Set height for the block */
-    margin: 10px; /* Space around the block */
-    padding: 10px; /* Padding inside the block */
-}
-</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-  </widget>
   <widget class="QLabel" name="Heading2">
    <property name="geometry">
     <rect>
@@ -195,6 +169,37 @@ exploreButton-&gt;setStyleSheet(
    </property>
    <property name="text">
     <string>Next</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ExpChoice">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>160</y>
+     <width>681</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px dashed #333; /* Dashed border */
+    border-radius: 8px; /* Rounded corners */
+    height: 200px; /* Set height for the block */
+    margin: 5px; /* Space around the block */
+    padding: 5px; /* Padding inside the block */
+	padding-right:5px;
+	color:black;
+	font-size:13px;
+	font-weight:bold;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
