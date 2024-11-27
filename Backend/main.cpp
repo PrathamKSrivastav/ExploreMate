@@ -216,6 +216,111 @@ void suggestCircuitPath(const string& startLocation, float totalDays) {
     cout << "Total distance traveled: " << totalDistance << " km.\n";
 }
 
+void suggestAlternativeRoutes(const string &currentLocation, float totalDays, vector<string> &alternate1, vector<string> &alternate2, vector<string> &alternate3) {
+    vector<vector<string>> alternativeRoutes;
+
+    // Generate exactly 3 alternative routes
+    for (int routeIndex = 0; routeIndex < 3; ++routeIndex) { // Always 3 routes
+        unordered_set<string> visited;
+        visited.insert(currentLocation);
+
+        vector<string> path;
+        path.push_back(currentLocation);
+
+        float remainingDays = totalDays;
+        string currentNode = currentLocation;
+
+        // Handle starting node duration
+        float startingNodeDuration = 0.0;
+        if (graph.m.count(currentLocation) > 0) {
+            for (const auto &neighbor : graph.m[currentLocation]) {
+                auto [distance, duration, rating, connectivity] = neighbor.second;
+                startingNodeDuration = duration;
+                break;
+            }
+        }
+
+        remainingDays -= startingNodeDuration;
+
+        // Generate route using randomness
+        while (remainingDays > 0) {
+            vector<pair<string, float>> candidateLocations;
+
+            // Collect potential next locations
+            for (const auto &neighbor : graph.m[currentNode]) {
+                string neighborNode = neighbor.first;
+                auto [distance, duration, rating, connectivity] = neighbor.second;
+
+                // Skip visited nodes
+                if (visited.count(neighborNode) > 0)
+                    continue;
+
+                // Check if location can be visited
+                if (duration <= remainingDays) {
+                    float nodeValue = graph.calculateValue(distance, duration, rating, connectivity);
+                    candidateLocations.push_back({neighborNode, nodeValue});
+                }
+            }
+
+            // If no candidates, break
+            if (candidateLocations.empty())
+                break;
+
+            // Sort candidates by value
+            sort(candidateLocations.begin(), candidateLocations.end(),
+                 [](const auto &a, const auto &b) { return a.second > b.second; });
+
+            // Select from top candidates with some randomness
+            int selectionIndex = min(
+                static_cast<int>(candidateLocations.size() - 1),
+                max(0, static_cast<int>(rand() % candidateLocations.size()) - routeIndex)
+            );
+
+            string nextLocation = candidateLocations[selectionIndex].first;
+            float travelDuration = 0.0;
+
+            // Find the actual duration for the selected location
+            for (const auto &neighbor : graph.m[currentNode]) {
+                if (neighbor.first == nextLocation) {
+                    auto [distance, duration, rating, connectivity] = neighbor.second;
+                    travelDuration = duration;
+                    break;
+                }
+            }
+
+            // Update path and tracking variables
+            visited.insert(nextLocation);
+            path.push_back(nextLocation);
+            remainingDays -= travelDuration;
+            currentNode = nextLocation;
+        }
+
+        // Store the generated route
+        alternativeRoutes.push_back(path);
+    }
+
+    // Ensure there are always 3 routes, even if some are duplicates
+    while (alternativeRoutes.size() < 3) {
+        alternativeRoutes.push_back(alternativeRoutes.back());
+    }
+
+    // Assign routes to output arrays
+    alternate1 = alternativeRoutes[0];
+    alternate2 = alternativeRoutes[1];
+    alternate3 = alternativeRoutes[2];
+
+    // Output alternative routes (optional)
+    cout << "\nGenerated Alternative Routes:\n";
+    for (int i = 0; i < 3; ++i) {
+        cout << "Route " << (i + 1) << ": ";
+        for (size_t j = 0; j < alternativeRoutes[i].size(); ++j) {
+            cout << alternativeRoutes[i][j];
+            if (j < alternativeRoutes[i].size() - 1)
+                cout << " --> ";
+        }
+        cout << "\n";
+    }
+}
 
 
 int main() {
@@ -240,6 +345,8 @@ int main() {
     // Plan and suggest the path
     suggestPath(currentLocation, totalDays);
     cout << "#######################################################################"<< endl;
-    suggestCircuitPath(currentLocation, totalDays);
+    vector<string> route1, route2, route3;
+    suggestAlternativeRoutes(currentLocation, totalDays, route1, route2, route3);
+
     return 0;
 }

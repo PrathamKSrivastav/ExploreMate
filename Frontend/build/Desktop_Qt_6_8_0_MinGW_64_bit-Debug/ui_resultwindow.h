@@ -26,6 +26,9 @@ public:
     QLabel *Heading1;
     QLabel *Heading2;
     QFrame *ExpChoice_2;
+    QLabel *alternate1;
+    QLabel *alternate2;
+    QLabel *alternate3;
     QPushButton *pushButton;
     QLabel *ExpChoice;
 
@@ -94,6 +97,27 @@ public:
 ""));
         ExpChoice_2->setFrameShape(QFrame::Shape::StyledPanel);
         ExpChoice_2->setFrameShadow(QFrame::Shadow::Raised);
+        alternate1 = new QLabel(ExpChoice_2);
+        alternate1->setObjectName("alternate1");
+        alternate1->setGeometry(QRect(10, 10, 661, 51));
+        alternate1->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color:black;\n"
+"font-size:13px;\n"
+"font-weight:bold;"));
+        alternate2 = new QLabel(ExpChoice_2);
+        alternate2->setObjectName("alternate2");
+        alternate2->setGeometry(QRect(10, 60, 661, 51));
+        alternate2->setStyleSheet(QString::fromUtf8("border:none;\n"
+"color:black;\n"
+"font-size:13px;\n"
+"font-weight:bold;"));
+        alternate3 = new QLabel(ExpChoice_2);
+        alternate3->setObjectName("alternate3");
+        alternate3->setGeometry(QRect(10, 110, 661, 51));
+        alternate3->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color:black;\n"
+"font-size:13px;\n"
+"font-weight:bold;"));
         pushButton = new QPushButton(resultwindow);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(560, 460, 161, 41));
@@ -145,6 +169,9 @@ public:
         Background->setText(QString());
         Heading1->setText(QCoreApplication::translate("resultwindow", "ExploreMate's Choice", nullptr));
         Heading2->setText(QCoreApplication::translate("resultwindow", "Other Choices", nullptr));
+        alternate1->setText(QString());
+        alternate2->setText(QString());
+        alternate3->setText(QString());
         pushButton->setText(QCoreApplication::translate("resultwindow", "Next", nullptr));
         ExpChoice->setText(QString());
     } // retranslateUi

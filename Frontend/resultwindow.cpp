@@ -21,6 +21,21 @@ void resultwindow::setPathString(const QString& pathString) {
     ui->ExpChoice->setText(pathString);
 }
 
+void resultwindow::setAlterRoute1(const QString& route1String){
+    m_route1String = route1String;
+    ui->alternate1->setText(route1String);
+}
+
+void resultwindow::setAlterRoute2(const QString& route2String){
+    m_route1String = route2String;
+    ui->alternate2->setText(route2String);
+}
+
+void resultwindow::setAlterRoute3(const QString& route3String){
+    m_route1String = route3String;
+    ui->alternate3->setText(route3String);
+}
+
 void resultwindow::on_pushButton_clicked()
 {
     feedbackwindow *feedbackWindow = new feedbackwindow();

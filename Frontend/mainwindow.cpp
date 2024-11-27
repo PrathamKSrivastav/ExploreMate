@@ -38,13 +38,36 @@ void MainWindow::on_ExploreBtn_clicked()
 
     vector<string> suggestedPath = graph.suggestPath(locationString, daysNum);
 
+    vector<string> route1, route2, route3;
+
+    graph.suggestAlternativeRoutes(locationString, daysNum, route1, route2, route3);
+
+    // for (size_t i = 0; i < suggestedPath.size(); ++i) {
+    //     pathString.append(QString::fromStdString(suggestedPath[i]));
+    //     if (i < suggestedPath.size() - 1) {
+    //         pathString.append(" -> ");
+    //     }
+    // }
+
     QString pathString;
-    for (size_t i = 0; i < suggestedPath.size(); ++i) {
-        pathString.append(QString::fromStdString(suggestedPath[i]));
-        if (i < suggestedPath.size() - 1) {
-            pathString.append(" -> ");
+    QString route1String, route2String, route3String;
+
+    auto convertRouteToString = [](const std::vector<std::string> &route) -> QString {
+        QString pathString;
+        for (size_t i = 0; i < route.size(); ++i) {
+            pathString.append(QString::fromStdString(route[i]));
+            if (i < route.size() - 1) {
+                pathString.append(" -> ");
+            }
         }
-    }
+        return pathString;
+    };
+
+    pathString = convertRouteToString(suggestedPath);
+    route1String = convertRouteToString(route1);
+    route2String = convertRouteToString(route2);
+    route3String = convertRouteToString(route3);
+
 
     // Step 2: Validate inputs
     if (locationText.isEmpty() || daysText.isEmpty()) {
@@ -54,6 +77,9 @@ void MainWindow::on_ExploreBtn_clicked()
 
     resultwindow *resultWindow = new resultwindow();
     resultWindow->setPathString(pathString);
+    resultWindow->setAlterRoute1(route1String);
+    resultWindow->setAlterRoute2(route2String);
+    resultWindow->setAlterRoute3(route3String);
     this->hide();
     resultWindow->show();
 }

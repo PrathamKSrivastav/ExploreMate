@@ -1,5 +1,13 @@
 #include "graph.h"
 #include <iostream>
+#include <QString>
+#include <QVector>
+#include <QStringList>
+#include <unordered_set>
+#include <vector>
+#include <tuple>
+#include <algorithm>
+#include <cstdlib>
 
 // Constructor
 Graph::Graph()
@@ -253,3 +261,112 @@ void Graph::suggestCircuitPath(const string &startLocation, float totalDays) {
     cout << "Total distance traveled: " << totalDistance << " km.\n";
 }
 
+
+void Graph::suggestAlternativeRoutes(const std::string &currentLocation, float totalDays,
+                                     std::vector<std::string> &alternate1,
+                                     std::vector<std::string> &alternate2,
+                                     std::vector<std::string> &alternate3) {
+    std::vector<std::vector<std::string>> alternativeRoutes;
+
+    // Generate exactly 3 alternative routes
+    for (int routeIndex = 0; routeIndex < 3; ++routeIndex) { // Always 3 routes
+        std::unordered_set<std::string> visited;
+        visited.insert(currentLocation);
+
+        std::vector<std::string> path;
+        path.push_back(currentLocation);
+
+        float remainingDays = totalDays;
+        std::string currentNode = currentLocation;
+
+        // Handle starting node duration
+        float startingNodeDuration = 0.0;
+        if (m.count(currentLocation) > 0) {
+            for (const auto &neighbor : m[currentLocation]) {
+                auto [distance, duration, rating, connectivity] = neighbor.second;
+                startingNodeDuration = duration;
+                break;
+            }
+        }
+
+        remainingDays -= startingNodeDuration;
+
+        // Generate route using randomness
+        while (remainingDays > 0) {
+            std::vector<std::pair<std::string, float>> candidateLocations;
+
+            // Collect potential next locations
+            for (const auto &neighbor : m[currentNode]) {
+                std::string neighborNode = neighbor.first;
+                auto [distance, duration, rating, connectivity] = neighbor.second;
+
+                // Skip visited nodes
+                if (visited.count(neighborNode) > 0)
+                    continue;
+
+                // Check if location can be visited
+                if (duration <= remainingDays) {
+                    float nodeValue = calculateValue(distance, duration, rating, connectivity);
+                    candidateLocations.push_back({neighborNode, nodeValue});
+                }
+            }
+
+            // If no candidates, break
+            if (candidateLocations.empty())
+                break;
+
+            // Sort candidates by value
+            std::sort(candidateLocations.begin(), candidateLocations.end(),
+                      [](const auto &a, const auto &b) { return a.second > b.second; });
+
+            // Select from top candidates with some randomness
+            int selectionIndex = std::min(
+                static_cast<int>(candidateLocations.size() - 1),
+                std::max(0, static_cast<int>(rand() % candidateLocations.size()) - routeIndex)
+                );
+
+            std::string nextLocation = candidateLocations[selectionIndex].first;
+            float travelDuration = 0.0;
+
+            // Find the actual duration for the selected location
+            for (const auto &neighbor : m[currentNode]) {
+                if (neighbor.first == nextLocation) {
+                    auto [distance, duration, rating, connectivity] = neighbor.second;
+                    travelDuration = duration;
+                    break;
+                }
+            }
+
+            // Update path and tracking variables
+            visited.insert(nextLocation);
+            path.push_back(nextLocation);
+            remainingDays -= travelDuration;
+            currentNode = nextLocation;
+        }
+
+        // Store the generated route
+        alternativeRoutes.push_back(path);
+    }
+
+    // Ensure there are always 3 routes, even if some are duplicates
+    while (alternativeRoutes.size() < 3) {
+        alternativeRoutes.push_back(alternativeRoutes.back());
+    }
+
+    // Assign routes to output arrays
+    alternate1 = alternativeRoutes[0];
+    alternate2 = alternativeRoutes[1];
+    alternate3 = alternativeRoutes[2];
+
+    // Output alternative routes (optional)
+    std::cout << "\nGenerated Alternative Routes:\n";
+    for (int i = 0; i < 3; ++i) {
+        std::cout << "Route " << (i + 1) << ": ";
+        for (size_t j = 0; j < alternativeRoutes[i].size(); ++j) {
+            std::cout << alternativeRoutes[i][j];
+            if (j < alternativeRoutes[i].size() - 1)
+                std::cout << " --> ";
+        }
+        std::cout << "\n";
+    }
+}

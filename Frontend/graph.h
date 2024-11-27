@@ -8,6 +8,7 @@
 #include <unordered_set>
 #include <string>
 #include <tuple>
+#include <QString>
 
 using namespace std;
 
@@ -24,6 +25,12 @@ public:
     // Add these functions for itinerary planning
     vector<string> suggestPath(const string &currentLocation, float totalDays);
     void suggestCircuitPath(const string &startLocation, float totalDays);
+    void suggestAlternativeRoutes(const std::string &currentLocation, float totalDays, int numAlternatives);
+    //void suggestAlternativeRoute(const QString &currentLocation, float totalDays, int numAlternatives, QString &alternate1, QString &alternate2, QString &alternate3);
+    void suggestAlternativeRoutes(const std::string &currentLocation, float totalDays,
+                                  std::vector<std::string> &alternate1,
+                                  std::vector<std::string> &alternate2,
+                                  std::vector<std::string> &alternate3);
 
     // Map to store the graph structure
     unordered_map<string, vector<pair<string, tuple<float, int, float, int>>>> m;
