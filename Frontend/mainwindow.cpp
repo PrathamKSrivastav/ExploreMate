@@ -42,15 +42,7 @@ void MainWindow::on_ExploreBtn_clicked()
 
     graph.suggestAlternativeRoutes(locationString, daysNum, route1, route2, route3);
 
-    // for (size_t i = 0; i < suggestedPath.size(); ++i) {
-    //     pathString.append(QString::fromStdString(suggestedPath[i]));
-    //     if (i < suggestedPath.size() - 1) {
-    //         pathString.append(" -> ");
-    //     }
-    // }
-
-    QString pathString;
-    QString route1String, route2String, route3String;
+    QString pathString, route1String, route2String, route3String;
 
     auto convertRouteToString = [](const std::vector<std::string> &route) -> QString {
         QString pathString;
